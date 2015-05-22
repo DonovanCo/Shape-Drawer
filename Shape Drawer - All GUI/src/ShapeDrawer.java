@@ -3,6 +3,16 @@ import javax.swing.*;
 
 public class ShapeDrawer extends Canvas 	
 	{	
+	int ran1=(int)(Math.random()*300)+25;
+	int ran2=(int)(Math.random()*300)+25;
+	int ran3=(int)(Math.random()*300)+25;
+	int ran4=(int)(Math.random()*300)+25;
+	int ran5=(int)(Math.random()*300)+25;
+	int ran6=(int)(Math.random()*300)+25;
+	int ran7=(int)(Math.random()*300)+25;
+	int ran8=(int)(Math.random()*300)+25;
+	int[] ranX={ran1, ran2, ran3, ran4};
+	int[] ranY={ran5, ran6, ran7, ran8};
 	int[] x={200, 250, 375, 300, 375, 200, 25, 100, 25, 150};
 	int[] y={5, 100, 100, 200, 350, 275, 350, 200, 100, 100};
 	private static final long	serialVersionUID = 1L;     	
@@ -56,7 +66,7 @@ public class ShapeDrawer extends Canvas
 	
 	public static void askQuestions()
 	    {
-		Object[] optionsThree = {"Square", "Circle", "Star"};
+		Object[] optionsThree = {"Square", "Circle", "Star", "Random Quad"};
 		shape = JOptionPane.showOptionDialog(frame, "What shape do you want to draw?",
 				"Shape Choice",
 				JOptionPane.YES_NO_CANCEL_OPTION,
@@ -140,6 +150,10 @@ public class ShapeDrawer extends Canvas
 			case 2:
 				{
 				graphics.fillPolygon(x, y, 10);
+				}
+			case 3:
+				{
+				graphics.fillPolygon(ranX, ranY, 4);
 				}
 			}
 		}
